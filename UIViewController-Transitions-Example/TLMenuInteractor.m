@@ -172,6 +172,7 @@
 #pragma mark - UIViewControllerInteractiveTransitioning Methods
 
 -(void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    [super startInteractiveTransition:transitionContext];
     self.transitionContext = transitionContext;
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -199,6 +200,7 @@
 #pragma mark - UIPercentDrivenInteractiveTransition Overridden Methods
 
 - (void)updateInteractiveTransition:(CGFloat)percentComplete {
+    [super updateInteractiveTransition];
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -217,6 +219,7 @@
 }
 
 - (void)finishInteractiveTransition {
+    [super finishInteractiveTransition];
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
@@ -245,6 +248,7 @@
 }
 
 - (void)cancelInteractiveTransition {
+    [super cancelInteractiveTransition];
     id<UIViewControllerContextTransitioning> transitionContext = self.transitionContext;
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
